@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+*, *::before, *::after {
+		box-sizing: border-box;
+}
+
+body {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		place-items: center;
+		width: 100vw;		
+		height: 100vh;
+}
+
+section {
+		width: 100vw;
+		padding: 0 5vw;
+}
+
+.container {
+		display: grid;
+		grid-template-rows: 1fr;
+		justify-content: center;
+		width: 100%;
+		padding: 1.5em 0;
+		border-radius: 2vw;
+		font-size: 3.5vw;
+		box-shadow: 0px 1px 5px #fff,
+												 1px 0px 5px 5px rgba(200,200,200,0.5),
+													1px 0px 5px #fff,												
+												-1px 0px 7px 2px rgba(0,0,0,0.5);
+}
+
+p {		
+		font-size: 4em;
+		text-align: center;
+		display: none;
+		opacity: 0;
+}
+
+.animateInit {
+		display: block;
+		animation: visibleInt 1s forwards 1 linear;
+		animation-delay: 500ms;
+}
+
+@keyframes visibleInt {
+		100% {
+				width: 100%;
+				padding: 0 1em;
+				opacity: 1;
+		}
+}
+
+h1 {
+		font-size: 4em;
+		margin: 0;
+		padding: 0;
+		width: 0;
+		font-family: 'Inconsolata', monospace;
+		color: white;
+		text-shadow: 1px 0px 2px #000;
+		box-shadow: 0px 1px 5px #fff,
+												 1px 0px 5px 5px rgba(200,200,200,0.5),
+													1px 0px 5px #fff,												
+												-1px 0px 7px 2px rgba(0,0,0,0.5);
+		display: none;
+		opacity: 0;
+}
+
+/*will be add by js when content loaded*/
+.animateHeading {
+		display: block;
+		animation: visible 1s forwards 1;
+}
+
+@keyframes visible {
+		100% {
+				width: 100%;
+				padding: 0 1em;
+				opacity: 1;
+		}
+}
+
+/*Buttons Div*/
+.container .output + div {
+		display: grid;
+		grid-template-rows: 1fr;
+		justify-content: center;
+		gap: 1em 0;
+		font-size: 3.5vw;
+}
+
+button {
+		background: none;
+		border: none;
+		outline: none;
+		font-size: 1.2em;
+		position: relative;
+		overflow: hidden;
+		padding: 0.5em;
+		border-radius: 0.25em;
+		z-index: 10;
+		background: black;
+		color: white;
+}
+
+button:hover::before {
+		content: "";
+		background: linear-gradient(90deg, #5597ff, #ff5540);
+		height: 8em;
+		width: 2em;
+		position: absolute;
+		top: -2.5em;
+		left: 1.5em;
+		right: 0;
+		bottom: 0;
+		animation: rotate 3s linear 1;
+		z-index: -2;
+}
+
+@keyframes rotate {
+		100% {transform: rotate(360deg);}
+}
+
+button:hover::after {
+		content: "";
+		position: absolute;
+		inset: 0.17em;
+		background: black;
+		z-index: -1;
+		border-radius: 0.25em;
+}
