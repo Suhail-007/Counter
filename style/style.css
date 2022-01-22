@@ -5,7 +5,6 @@
 }
 
 body {
-		padding: 0;
 		margin: 0;
 		display: flex;
 		place-items: center;
@@ -13,8 +12,12 @@ body {
 		height: 100vh;
 }
 
+main {
+		min-width: 100%;
+}
+
 section {
-		width: 100vw;
+		min-width: 100%;
 		padding: 0 5vw;
 }
 
@@ -25,7 +28,7 @@ section {
 		width: 100%;
 		padding: 1.5em 0;
 		border-radius: 2vw;
-		font-size: 3.5vw;
+	/* font-size: 3.5vw;*/
 		box-shadow: 0px 1px 5px #fff,
 												 1px 0px 5px 5px rgba(200,200,200,0.5),
 													1px 0px 5px #fff,												
@@ -37,20 +40,6 @@ p {
 		text-align: center;
 		display: none;
 		opacity: 0;
-}
-
-.animateInit {
-		display: block;
-		animation: visibleInt 1s forwards 1 linear;
-		animation-delay: 500ms;
-}
-
-@keyframes visibleInt {
-		100% {
-				width: 100%;
-				padding: 0 1em;
-				opacity: 1;
-		}
 }
 
 h1 {
@@ -69,27 +58,13 @@ h1 {
 		opacity: 0;
 }
 
-/*will be add by js when content loaded*/
-.animateHeading {
-		display: block;
-		animation: visible 1s forwards 1;
-}
-
-@keyframes visible {
-		100% {
-				width: 100%;
-				padding: 0 1em;
-				opacity: 1;
-		}
-}
-
 /*Buttons Div*/
 .container .output + div {
 		display: grid;
 		grid-template-rows: 1fr;
 		justify-content: center;
 		gap: 1em 0;
-		font-size: 3.5vw;
+		/*font-size: 3.5vw;*/
 }
 
 button {
@@ -132,3 +107,42 @@ button:hover::after {
 		z-index: -1;
 		border-radius: 0.25em;
 }
+
+/*This will animate the integer and class will be added by js*/
+.animateInit {
+		display: block;
+		animation: visibleInt 1s forwards 1 linear;
+		animation-delay: 500ms;
+}
+
+@keyframes visibleInt {
+		100% {
+				width: 100%;
+				padding: 0 1em;
+				opacity: 1;
+		}
+}
+
+/*will be add by js when content loaded*/
+.animateHeading {
+		display: block;
+		animation: visible 1s forwards 1;
+}
+
+@keyframes visible {
+		100% {
+				width: 100%;
+				padding: 0 1em;
+				opacity: 1;
+		}
+}
+
+/*@media screen and (min-width: 1024px){
+.container {
+		font-size: 1.2vw;
+ }
+  
+.container .output + div {
+		font-size: 1.2vw;
+ }
+}*/

@@ -14,6 +14,7 @@ buttonsDiv.addEventListener('click', (e) => {
 				output.innerText = counter;
 		}
 		if (e.target.innerHTML === 'Reset') {
+				if(counter == 0) return
 				counter = 0;
 				output.innerText = counter;
 		}
@@ -26,5 +27,5 @@ buttonsDiv.addEventListener('click', (e) => {
 let h1 = document.querySelector('h1');
 window.addEventListener('DOMContentLoaded', () => {
 		h1.classList.add('animateHeading');
-		output.classList.add('animateInit')
+		output.classList.add('animateInit');
 })
